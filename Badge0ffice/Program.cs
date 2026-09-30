@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.Contracts;
+﻿/*
+Part 1: The Name
+*/
 
 System.Console.Write("Hello, please input your full name: ");
 
@@ -26,3 +28,17 @@ System.Console.WriteLine($"Name on Badge: {fullName}");
 System.Console.WriteLine($"Username: {userName}");
 System.Console.WriteLine($"Initials: {firstInitial}.{lastInitial}.");
 System.Console.WriteLine($"Letters in last name: {totalLetters}");
+
+/*
+Part 2: The Numbers
+*/
+
+Random rando = new Random();
+
+int stuID = rando.Next(100000, 1000000);
+int lockerID = rando.Next(1, 501);
+
+System.Console.WriteLine();
+System.Console.WriteLine();
+System.Console.WriteLine($"Student ID: {stuID}");
+System.Console.WriteLine($"Locker: {lockerID}");
