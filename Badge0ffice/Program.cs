@@ -75,3 +75,24 @@ int timeSec = Convert.ToInt32(distance % walkSpeed);
 System.Console.WriteLine($"Distance: {distance.ToString("F1")}");
 System.Console.WriteLine($"Walk time: {timeMin} minutes {timeSec} seconds");
 
+/*
+Part 4: The Badge
+*/
+
+int checkDigit = stuID % 9;
+
+System.Console.WriteLine("==================================");
+System.Console.WriteLine("        ETSU STUDENT BADGE        ");
+System.Console.WriteLine("==================================");
+
+System.Console.WriteLine($"NAME{fullName.PadLeft(6)}");
+
+System.Console.WriteLine($"USERNAME{userName.PadLeft(2)}");
+
+System.Console.WriteLine($"ID{Convert.ToString(stuID).PadLeft(8)}-{checkDigit}");
+
+System.Console.WriteLine($"LOCKER{Convert.ToString(lockerID).PadLeft(4)}");
+
+System.Console.WriteLine($"WALK{Convert.ToString(timeMin).PadLeft(6)} min {timeSec} sec");
+
+System.Console.WriteLine("==================================");
