@@ -58,16 +58,18 @@ int classX = Convert.ToInt32(Console.ReadLine());
 System.Console.Write("What is the Y location of your classroom? ");
 int classY = Convert.ToInt32(Console.ReadLine());
 
-System.Console.Write("What is the X location of your doorm? ");
+System.Console.Write("What is the X location of your dorm? ");
 int doormY = Convert.ToInt32(Console.ReadLine());
 
-System.Console.Write("What is the Y location of your doorm?");
+System.Console.Write("What is the Y location of your dorm? ");
 int doormX = Convert.ToInt32(Console.ReadLine());
 
 System.Console.Write("What is your walking speed in feet per second? ");
-double walkSpeed = Convert.ToInt32(Console.ReadLine());
+double walkSpeed = Convert.ToDouble(Console.ReadLine());
 
-double distance = Math.Sqrt(Math.Pow((classX - doormX),2) + Math.Pow((classY - doormY),2));
+double distance = Math.Sqrt(Math.Pow((doormX - classX),2) + Math.Pow((doormY - classY),2));
+
+System.Console.WriteLine(distance);
 
 int timeMin = Convert.ToInt32(distance / walkSpeed);
 int timeSec = Convert.ToInt32(distance % walkSpeed);
@@ -85,14 +87,14 @@ System.Console.WriteLine("==================================");
 System.Console.WriteLine("        ETSU STUDENT BADGE        ");
 System.Console.WriteLine("==================================");
 
-System.Console.WriteLine($"NAME{fullName.PadLeft(6)}");
+System.Console.WriteLine($"NAME {fullName.PadLeft(17)}");
 
-System.Console.WriteLine($"USERNAME{userName.PadLeft(2)}");
+System.Console.WriteLine($"USERNAME  {userName.PadLeft(9)}");
 
-System.Console.WriteLine($"ID{Convert.ToString(stuID).PadLeft(8)}-{checkDigit}");
+System.Console.WriteLine($"ID{ Convert.ToString(stuID).PadLeft(14)}-{checkDigit}");
 
-System.Console.WriteLine($"LOCKER{Convert.ToString(lockerID).PadLeft(4)}");
+System.Console.WriteLine($"LOCKER {Convert.ToString(lockerID).PadLeft(6)}");
 
-System.Console.WriteLine($"WALK{Convert.ToString(timeMin).PadLeft(6)} min {timeSec} sec");
+System.Console.WriteLine($"WALK {Convert.ToString(timeMin).PadLeft(6)} min {timeSec} sec");
 
 System.Console.WriteLine("==================================");
