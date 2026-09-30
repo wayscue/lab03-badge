@@ -2,6 +2,8 @@
 Part 1: The Name
 */
 
+using System.Text.RegularExpressions;
+
 System.Console.Write("Hello, please input your full name: ");
 
 string? fullName = Console.ReadLine();
@@ -42,3 +44,34 @@ System.Console.WriteLine();
 System.Console.WriteLine();
 System.Console.WriteLine($"Student ID: {stuID}");
 System.Console.WriteLine($"Locker: {lockerID}");
+
+/*
+Part 3: The Walk
+*/
+
+System.Console.WriteLine();
+System.Console.WriteLine();
+
+System.Console.Write("What is the X location of your classroom? ");
+int classX = Convert.ToInt32(Console.ReadLine());
+
+System.Console.Write("What is the Y location of your classroom? ");
+int classY = Convert.ToInt32(Console.ReadLine());
+
+System.Console.Write("What is the X location of your doorm? ");
+int doormY = Convert.ToInt32(Console.ReadLine());
+
+System.Console.Write("What is the Y location of your doorm?");
+int doormX = Convert.ToInt32(Console.ReadLine());
+
+System.Console.Write("What is your walking speed in feet per second? ");
+double walkSpeed = Convert.ToInt32(Console.ReadLine());
+
+double distance = Math.Sqrt(Math.Pow((classX - doormX),2) + Math.Pow((classY - doormY),2));
+
+int timeMin = Convert.ToInt32(distance / walkSpeed);
+int timeSec = Convert.ToInt32(distance % walkSpeed);
+
+System.Console.WriteLine($"Distance: {distance.ToString("F1")}");
+System.Console.WriteLine($"Walk time: {timeMin} minutes {timeSec} seconds");
+
