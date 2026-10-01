@@ -1,4 +1,11 @@
 ﻿/*
+* Name: William Ayscue
+* Course: CSCI 1250, Section 002
+* Assignment: Lab 03, The Badge Office
+* Date: September 30, 2026
+* Description: Builds a student badge from a name, two random assignments,
+* and the walking distance to a first class.
+
 Part 1: The Name
 */
 
@@ -59,10 +66,10 @@ System.Console.Write("What is the Y location of your classroom? ");
 int classY = Convert.ToInt32(Console.ReadLine());
 
 System.Console.Write("What is the X location of your dorm? ");
-int doormY = Convert.ToInt32(Console.ReadLine());
+int doormX = Convert.ToInt32(Console.ReadLine());
 
 System.Console.Write("What is the Y location of your dorm? ");
-int doormX = Convert.ToInt32(Console.ReadLine());
+int doormY = Convert.ToInt32(Console.ReadLine());
 
 System.Console.Write("What is your walking speed in feet per second? ");
 double walkSpeed = Convert.ToDouble(Console.ReadLine());
@@ -71,8 +78,9 @@ double distance = Math.Sqrt(Math.Pow((doormX - classX),2) + Math.Pow((doormY - c
 
 System.Console.WriteLine(distance);
 
-int timeMin = Convert.ToInt32(distance / walkSpeed);
-int timeSec = Convert.ToInt32(distance % walkSpeed);
+int time = Convert.ToInt32(distance / walkSpeed);
+int timeMin = Convert.ToInt32(time/60);
+int timeSec = Convert.ToInt32(time % 60);
 
 System.Console.WriteLine($"Distance: {distance.ToString("F1")}");
 System.Console.WriteLine($"Walk time: {timeMin} minutes {timeSec} seconds");
@@ -83,18 +91,21 @@ Part 4: The Badge
 
 int checkDigit = stuID % 9;
 
+System.Console.WriteLine();
+System.Console.WriteLine();
+
 System.Console.WriteLine("==================================");
 System.Console.WriteLine("        ETSU STUDENT BADGE        ");
 System.Console.WriteLine("==================================");
 
-System.Console.WriteLine($"NAME {fullName.PadLeft(17)}");
+System.Console.WriteLine($"NAME {fullName.PadLeft(18)}");
 
-System.Console.WriteLine($"USERNAME  {userName.PadLeft(9)}");
+System.Console.WriteLine($"USERNAME {userName.PadLeft(11)}");
 
-System.Console.WriteLine($"ID{ Convert.ToString(stuID).PadLeft(14)}-{checkDigit}");
+System.Console.WriteLine($"ID{ Convert.ToString(stuID).PadLeft(15)}-{checkDigit}");
 
-System.Console.WriteLine($"LOCKER {Convert.ToString(lockerID).PadLeft(6)}");
+System.Console.WriteLine($"LOCKER {Convert.ToString(lockerID).PadLeft(7)}");
 
-System.Console.WriteLine($"WALK {Convert.ToString(timeMin).PadLeft(6)} min {timeSec} sec");
+System.Console.WriteLine($"WALK {Convert.ToString(timeMin).PadLeft(7)} min {timeSec} sec");
 
 System.Console.WriteLine("==================================");
