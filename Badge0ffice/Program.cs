@@ -6,7 +6,7 @@
 * Description: Builds a student badge from a name, two random assignments,
 * and the walking distance to a first class.
 
-Part 1: The Name
+Part 1: The Name: Generates a student name and initial in the proper format, as well as a username
 */
 
 using System.Text.RegularExpressions;
@@ -39,7 +39,7 @@ System.Console.WriteLine($"Initials: {firstInitial}.{lastInitial}.");
 System.Console.WriteLine($"Letters in last name: {totalLetters}");
 
 /*
-Part 2: The Numbers
+Part 2: The Numbers: Dispenses a random number for student ID and locker
 */
 
 Random rando = new Random();
@@ -53,7 +53,7 @@ System.Console.WriteLine($"Student ID: {stuID}");
 System.Console.WriteLine($"Locker: {lockerID}");
 
 /*
-Part 3: The Walk
+Part 3: The Walk: Using the X and Y locations of the students classroom and dorm, it calculates the walking distance and time to Ada's classes
 */
 
 System.Console.WriteLine();
@@ -86,7 +86,7 @@ System.Console.WriteLine($"Distance: {distance.ToString("F1")}");
 System.Console.WriteLine($"Walk time: {timeMin} minutes {timeSec} seconds");
 
 /*
-Part 4: The Badge
+Part 4: The Badge: This prints all the inputs into a single badge that adheres to the format given in Lab 5
 */
 
 int checkDigit = stuID % 9;
